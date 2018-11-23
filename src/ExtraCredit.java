@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ExtraCredit {
 
@@ -11,7 +10,7 @@ public class ExtraCredit {
     }
 
     public double getTimeElapsed() {
-        return timeElapsed;
+        return timeElapsed/1e9; //convert nanoseconds to seconds by dividing by 1e9
     }
 
     public void setTimeElapsed(double timeElapsed) {
@@ -26,6 +25,7 @@ public class ExtraCredit {
         //iterate through the array.
         //each element should be multiplied by 2^n starting from i=0.
         //add up each element to sum variable, which will represent the corresponding decimal number.
+        double startTime = (System.nanoTime());
 
         ArrayList<Long> array = new ArrayList<Long>();
         do {
@@ -38,10 +38,12 @@ public class ExtraCredit {
             sum += array.get(i) * Math.pow(2, i);
         }
 
+        setTimeElapsed(System.nanoTime() - startTime);
         return sum;
     }
 
     public long decimalToBinary(long decimal) {
+        double startTime = (System.nanoTime());
         String sum = "";
         long divisor = decimal;
 
@@ -58,10 +60,12 @@ public class ExtraCredit {
         sum = input1.toString();
 
         long decimalNum = Long.valueOf(sum);
+        setTimeElapsed(System.nanoTime() - startTime);
         return decimalNum;
     }
 
     public long hexadecimalToDecimal(String hexadecimal) {
+        double startTime = (System.nanoTime());
         long sum = 0;
         //reverse string before iterating through it
         StringBuilder input1 = new StringBuilder();
@@ -102,6 +106,7 @@ public class ExtraCredit {
             }
         }
 
+        setTimeElapsed(System.nanoTime() - startTime);
         return sum;
     }
 }

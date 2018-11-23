@@ -4,9 +4,12 @@ public class Main {
 
         ExtraCredit ec = new ExtraCredit();
 
-        System.out.println(ec.binaryToDecimal(1011));
-        System.out.println(ec.decimalToBinary(23));
-        System.out.println(ec.hexadecimalToDecimal("dab"));
+        System.out.println(ec.binaryToDecimal(10101));
+        System.out.println("Time elapsed 1: " + ec.getTimeElapsed());
+        System.out.println(ec.decimalToBinary(45611));
+        System.out.println("Time elapsed 2: " + ec.getTimeElapsed());
+        System.out.println(ec.hexadecimalToDecimal("B22B"));
+        System.out.println("Time elapsed 3: " + ec.getTimeElapsed());
 
     }
 }
